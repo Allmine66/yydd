@@ -5,11 +5,11 @@
 # <UDF name="VPN_PASSWORD" Label="VPN Password" />
 
 if [ -f /etc/apt/sources.list ]; then
-  url=vpnsetup.sh
+  url=ubuntu.sh
   apt-get -y update
   apt-get -y install wget
 elif [ -f /etc/yum.conf ]; then
-  url=vpnsetup_centos.sh
+  url=centos.sh
   yum -y install wget
 else
   echo "Your distribution is not supported by this StackScript"
