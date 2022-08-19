@@ -16,7 +16,7 @@ else
   exit 1
 fi
 
-wget "https://raw.githubusercontent.com/Allmine66/yydd/main/$url" -O /tmp/vpn.sh && sh /tmp/vpn.sh && rm -f /tmp/vpn.sh
+wget "https://raw.githubusercontent.com/Allmine66/yydd/vpn/$url" -O /tmp/vpn.sh && sh /tmp/vpn.sh && rm -f /tmp/vpn.sh
 
 # Fix xl2tpd on CentOS 7 for Linode VMs, because kernel module
 # l2tp_ppp is not available in the default Linode kernel
