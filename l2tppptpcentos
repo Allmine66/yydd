@@ -56,14 +56,14 @@ done
 
 echo "开始为你必备软件，请稍等！"
 
-apt-get update > /dev/null
-apt-get install wget -y  > /dev/null
+yum update > /dev/null
+yum install wget -y  > /dev/null
 
 MY_IP=`wget -q -O - http://wtfismyip.com/text` 
 echo "你的服务器IP为 $MY_IP"
 echo "============================================================"
 
-apt-get install libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev libgmp3-dev flex bison gcc make libunbound-dev libnss3-tools ppp pptpd -y  > /dev/null
+yum install libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev libgmp3-dev flex bison gcc make libunbound-dev libnss3-tools ppp pptpd -y  > /dev/null
 
 echo "开始配置PPTP"
 cat > /etc/pptpd.conf << EOF
@@ -109,7 +109,7 @@ then
   exit 0
 fi
 
-apt-get install xl2tpd -y > /dev/null
+yum install xl2tpd -y > /dev/null
 
 if [ "$?" = "1" ]
 then
@@ -247,7 +247,7 @@ fi
 
 
 echo "开始配置shadowsocks......."
-apt-get install python-pip   -y > /dev/null
+yum install python-pip   -y > /dev/null
 pip install shadowsocks  > /dev/null
 mkdir /etc/shadowsocks
 cat > /etc/shadowsocks/config.json << EOF
